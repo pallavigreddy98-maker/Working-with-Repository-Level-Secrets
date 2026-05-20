@@ -1,4 +1,4 @@
-name: Deploy to GCP
+name: Deploy to AWS
 
 on:
   push:
@@ -14,8 +14,8 @@ jobs:
 
       - name: Configure AWS Credentials
         run: |
-          gcp configure set gcp_access_key_id ${{ secrets.GCP_ACCESS_KEY }}
-          gcp configure set gcp_secret_access_key ${{ secrets.GCP_SECRET_KEY }}
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY }}
 
       - name: Deploy Application
-        run: echo "Deploying to GCP..."
+        run: echo "Deploying to AWS..."
